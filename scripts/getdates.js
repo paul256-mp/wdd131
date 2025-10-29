@@ -1,10 +1,5 @@
-// Select the elements
-const yearSpan = document.querySelector("#currentyear");
-const lastMod = document.querySelector("#lastModified");
+// getting the current year and formatting it as YYYY-MM-DD
+const currentyear = new Date().getFullYear();
+document.getElementById("currentyear").textContent = currentyear;
 
-// Get current year using Date object
-const today = new Date();
-yearSpan.textContent = today.getFullYear(); // Dynamically displays the copyright year
-
-// Get last modified date of the document
-lastMod.textContent = `Last Modified: ${document.lastModified}`;
+document.getElementById("lastmodified").textContent = "last modified: " + document.lastModified;

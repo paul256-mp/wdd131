@@ -23,12 +23,16 @@
 body {
   font-family: "Roboto", sans-serif;
   font-weight: 400;
+  background-color: whitesmoke;
 }
 
 header h1 {
-  background-color: #f4f4f4;
+  background-color: #7c55f2;
   padding: 20px;
+  display: block;
   text-align: center;
+  margin: 0 auto;
+  box-shadow: #ccc;
 }
 nav {
   background-color: #333333;

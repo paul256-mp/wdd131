@@ -89,6 +89,7 @@ section {
 footer {
   text-align: center;
   padding: 10px;
-  background-color: #f4f4f4;
+  background-color: #5e9eec;
   margin-top: 20px;
+  box-shadow: #2c3e50;
 }

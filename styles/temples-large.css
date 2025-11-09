@@ -1,0 +1,44 @@
+/* Large Screen Styles for Temple Album (min-width: 1024px) */
+
+/* Header Styles for Large Screens */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  text-align: left;
+}
+
+header h1 {
+  margin-bottom: 0;
+}
+
+/* Navigation - Large Screen Flex */
+nav ul {
+  flex-direction: row;
+  gap: 1rem;
+}
+
+nav a {
+  border-radius: 4px;
+}
+
+nav a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+/* Main Content for Large Screens */
+main {
+  padding: 2rem;
+}
+
+/* Gallery - Large Screen Grid */
+.gallery {
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.gallery img {
+  height: 250px;
+}

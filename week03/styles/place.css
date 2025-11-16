@@ -1,0 +1,203 @@
+/* CSS Variables */
+:root {
+  --primary-color: #fc3d32;
+  /* Madagascar flag red */
+  --secondary-color: #007e3a;
+  /* Madagascar flag green */
+  --accent-color: #ffffff;
+  /* Madagascar flag white */
+  --text-color: #333333;
+  --background-color: #f5f5f5;
+  --card-background: #ffffff;
+  --border-radius: 8px;
+  --box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 2rem;
+  --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-family);
+  color: var(--text-color);
+  background-color: var(--background-color);
+  line-height: 1.6;
+}
+
+/* Header Styles */
+header {
+  background-color: var(--primary-color);
+  color: var(--accent-color);
+  padding: var(--spacing-md);
+  text-align: center;
+}
+
+header h1 {
+  margin-bottom: var(--spacing-sm);
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing-lg);
+}
+
+nav a {
+  color: var(--accent-color);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* Main Content Styles */
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--spacing-md);
+}
+
+/* Hero Section */
+.hero {
+  margin-bottom: var(--spacing-lg);
+}
+
+.hero img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+}
+
+/* Section Styles */
+section {
+  background-color: var(--card-background);
+  border-radius: var(--border-radius);
+  padding: var(--spacing-lg);
+  margin-bottom: var(--spacing-lg);
+  box-shadow: var(--box-shadow);
+}
+
+section h2 {
+  color: var(--secondary-color);
+  margin-bottom: var(--spacing-md);
+  border-bottom: 2px solid var(--secondary-color);
+  padding-bottom: var(--spacing-sm);
+}
+
+/* About Section */
+.about .content {
+  display: grid;
+  gap: var(--spacing-md);
+}
+
+/* Attractions Section */
+.attractions .content {
+  display: grid;
+  gap: var(--spacing-md);
+}
+
+.attraction {
+  padding: var(--spacing-md);
+  background-color: var(--background-color);
+  border-radius: var(--border-radius);
+}
+
+.attraction h3 {
+  color: var(--primary-color);
+  margin-bottom: var(--spacing-sm);
+}
+
+/* Weather Section */
+.weather .content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.weather-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-md);
+}
+
+.weather-icon {
+  width: 64px;
+  height: 64px;
+}
+
+.weather-details {
+  text-align: center;
+}
+
+.weather-details p {
+  margin-bottom: var(--spacing-sm);
+}
+
+/* Footer Styles */
+footer {
+  background-color: var(--secondary-color);
+  color: var(--accent-color);
+  text-align: center;
+  padding: var(--spacing-md);
+  margin-top: var(--spacing-lg);
+}
+
+footer p {
+  margin-bottom: var(--spacing-sm);
+}
+
+/* Media Queries for Wider Views */
+@media (min-width: 768px) {
+  .about .content {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .attractions .content {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .weather .content {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .weather-info {
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .weather-details {
+    text-align: left;
+  }
+
+  /* Pseudo element for weather icon in wider view */
+  .weather h2::after {
+    content: " ⛅";
+    margin-left: var(--spacing-sm);
+  }
+}
+
+/* Additional responsive adjustments */
+@media (max-width: 767px) {
+  nav ul {
+    flex-direction: column;
+    gap: var(--spacing-sm);
+  }
+
+  .weather-icon {
+    display: block;
+  }
+}

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>uganda - the pearl of Africa</title>
+  <link rel="stylesheet" href="styles/place.css">
+  <script src="scripts/place.js" defer></script>
+</head>
+
+<body>
+  <header>
+    <h1>uganda</h1>
+    <nav>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#attractions">Attractions</a></li>
+        <li><a href="#weather">Weather</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <picture>
+        <source media="(min-width: 768px)"
+          srcset="https://cdn.audleytravel.com/-/-/79/261062-the-murchison-falls.jpg" sizes="100vw">
+        <source media="(max-width: 767px)" srcset="images/madagascar-hero-small.webp 640w" sizes="100vw">
+        <img src="https://cdn.audleytravel.com/-/-/79/261062-the-murchison-falls.jpg" alt="Scenic view of Uganda's landscape" loading="lazy ">
+      </picture>
+    </section>
+<section id="about" class="about">
+  <h2>About Uganda</h2>
+  <div class="content">
+    <p>Uganda, known as the "Pearl of Africa," is a landlocked country in East Africa renowned for its diverse
+      landscapes, abundant wildlife, and warm hospitality. From the source of the Nile River to the snow-capped Rwenzori
+      Mountains, Uganda offers breathtaking natural beauty.</p>
+    <p>The country is home to over half of the world's remaining mountain gorillas, making it one of the premier
+      destinations for primate tracking and eco-tourism in Africa.</p>
+  </div>
+</section>
+
+<section id="attractions" class="attractions">
+  <h2>Top Attractions</h2>
+  <div class="content">
+    <div class="attraction">
+      <h3>Bwindi Impenetrable Forest</h3>
+      <p>Home to nearly half of the world's remaining mountain gorillas, offering unforgettable gorilla trekking
+        experiences.</p>
+    </div>
+    <div class="attraction">
+      <h3>Murchison Falls</h3>
+      <p>Where the Nile River forces itself through a narrow gorge, creating one of Africa's most powerful waterfalls.
+      </p>
+    </div>
+    <div class="attraction">
+      <h3>Queen Elizabeth National Park</h3>
+      <p>Famous for tree-climbing lions and diverse ecosystems including savannah, forests, and crater lakes.</p>
+    </div>
+  </div>
+</section>
+    
+    <section id="weather" class="weather">
+      <h2>Weather</h2>
+      <div class="content">
+        <div class="weather-info">
+          <div class="weather-icon">
+            <svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+              <path d="M32,16c-8.836,0-16,7.164-16,16s7.164,16,16,16s16-7.164,16-16S40.836,16,32,16z M32,44c-6.627,0-12-5.373-12-12
+                                s5.373-12,12-12s12,5.373,12,12S38.627,44,32,44z" fill="#FFD700" />
+              <path d="M32,12c-1.105,0-2-0.895-2-2V2c0-1.105,0.895-2,2-2s2,0.895,2,2v8C34,11.105,33.105,12,32,12z"
+                fill="#FFD700" />
+              <path d="M32,52c-1.105,0-2-0.895-2-2v-8c0-1.105,0.895-2,2-2s2,0.895,2,2v8C34,51.105,33.105,52,32,52z"
+                fill="#FFD700" />
+              <path d="M12,32c0-1.105-0.895-2-2-2H2c-1.105,0-2,0.895-2,2s0.895,2,2,2h8C11.105,34,12,33.105,12,32z"
+                fill="#FFD700" />
+              <path d="M62,30h-8c-1.105,0-2,0.895-2,2s0.895,2,2,2h8c1.105,0,2-0.895,2-2S63.105,30,62,30z"
+                fill="#FFD700" />
+              <path d="M19.222,19.222c-0.781,0.781-2.047,0.781-2.828,0l-5.657-5.657c-0.781-0.781-0.781-2.047,0-2.828
+                                s2.047-0.781,2.828,0l5.657,5.657C20.003,17.175,20.003,18.441,19.222,19.222z"
+                fill="#FFD700" />
+              <path d="M44.778,44.778c-0.781-0.781-0.781-2.047,0-2.828l5.657-5.657c0.781-0.781,2.047-0.781,2.828,0
+                                s0.781,2.047,0,2.828l-5.657,5.657C46.825,45.559,45.559,45.559,44.778,44.778z"
+                fill="#FFD700" />
+              <path d="M19.222,44.778c0.781-0.781,0.781-2.047,0-2.828s-2.047-0.781-2.828,0l-5.657,5.657
+                                c-0.781,0.781-0.781,2.047,0,2.828s2.047,0.781,2.828,0L19.222,44.778z" fill="#FFD700" />
+              <path d="M44.778,19.222c0.781,0.781,2.047,0.781,2.828,0l5.657-5.657c0.781-0.781,0.781-2.047,0-2.828
+                                s-2.047-0.781-2.828,0l-5.657,5.657C43.997,17.175,43.997,18.441,44.778,19.222z"
+                fill="#FFD700" />
+            </svg>
+          </div>
+          <div class="weather-details">
+            <p><strong>Temperature:</strong> <span id="temperature">78</span>°F</p>
+            <p><strong>Conditions:</strong> Partly Cloudy</p>
+            <p><strong>Wind Speed:</strong> <span id="wind-speed">5</span> mph</p>
+            <p><strong>Wind Chill:</strong> <span id="wind-chill">N/A</span></p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; <span id="current-year"></span> uganda Travel Guide</p>
+    <p>Last Modified: <span id="last-modified"></span></p>
+    <div class="wireframe">
+     <img src="https://app.moqups.com/L6tz5LBxO748M4ffcPLzeBOfpeQ5HTZQ/edit/page/a9ae1237e" alt="Wireframe example">
+    </div>
+  </footer>
+</body>
+
+</html>

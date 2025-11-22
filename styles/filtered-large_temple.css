@@ -14,18 +14,17 @@ header h1 {
 }
 
 /* Navigation - Large Screen Flex */
-nav ul  li{
-  flex-direction: row;
-  display: flex;
-  justify-content: space-around;
-  padding: 1rem;
-  margin: 0;
-  width: 100%;
-  background-color: rgb(60, 33, 177);
-  gap: 1rem;
-}
 
-nav a {
+na/* Navigation - Large Screen Flex */
+.nav-menu {
+  display: flex !important;
+  flex-direction: row;
+  position: static;
+  background: transparent;
+  padding: 0;
+  box-shadow: none;
+  gap: 0.5rem;
+}v a {
   border-radius: 4px;
   width: 100%;
 }
@@ -48,4 +47,10 @@ main {
 
 .gallery img {
   height: 250px;
+}
+/* Extra Large Screens */
+@media (min-width: 1200px) {
+  .gallery {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }

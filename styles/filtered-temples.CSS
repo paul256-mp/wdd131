@@ -1,3 +1,14 @@
+nav ul li {
+  flex-direction: row;
+  display: flex;
+  justify-content: space-around;
+  padding: 1rem;
+  margin: 0;
+  width: 100%;
+  background-color: rgb(60, 33, 177);
+  gap: 1rem;
+}
+
 nav a {
   color: white;
   text-decoration: none;
@@ -5,7 +16,24 @@ nav a {
   display: block;
   transition: background-color 0.3s ease;
 }
+/* Mobile Navigation Menu */
+.nav-menu {
+  display: none;
+  flex-direction: column;
+  position: relative;
+  top: 100%;
+  right: 0;
+  left: 0;
+  background: var(--secondary-color);
+  list-style: none;
+  padding: 1rem;
+  box-shadow: var(--shadow);
+  z-index: 999;
+}
 
+.nav-menu.active {
+  display: flex;
+}
 nav a:hover {
   background-color: rgba(255, 255, 255, 0.2);
 }

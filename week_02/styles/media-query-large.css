@@ -1,0 +1,6 @@
+@media (min-width: 500px) {
+  /* Add your CSS rules here */
+  .your-grid-container {
+    grid-template-columns: 1fr 1fr;
+  }
+}

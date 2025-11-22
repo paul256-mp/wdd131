@@ -1,0 +1,29 @@
+@media (min-width: 768px) {
+
+  /* Header */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+  }
+
+  header h1 {
+    margin-bottom: 0;
+  }
+
+  /* Navigation - Desktop */
+  .menu-toggle {
+    display: none;
+  }
+
+  nav ul {
+    display: flex;
+    flex-direction: row;
+  }
+
+  /* Gallery - Desktop Grid */
+  .gallery {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

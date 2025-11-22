@@ -1,4 +1,5 @@
-/* Mobile First Styles for Temple Album */
+
+  list/* Mobile First Styles for Temple Album */
 * {
   margin: 0;
   padding: 0;
@@ -28,10 +29,10 @@ header h1 {
 /* Navigation - Mobile Flex */
 nav ul {
   display: flex;
-  flex-direction: column;
-  
   list-style: none;
-  gap: 0.5rem;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 100%;
 }
 
 nav a {

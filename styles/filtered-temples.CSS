@@ -222,3 +222,16 @@ footer {
 .footer-content p {
   margin: 0.5rem 0;
 }
+@media (max-width: 600px) {
+  nav ul {
+    flex-direction: column;
+  }
+}
+nav ul {
+  display: flex;
+  justify-content: space-around;
+}
+nav a:hover {
+  color: #0077cc;
+  text-decoration: underline;
+}

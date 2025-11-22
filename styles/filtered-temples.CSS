@@ -1,4 +1,4 @@
-/* Mobile First Styles for Temple Album */
+/* Mobile First Styles for Filtered Temples */
 * {
   margin: 0;
   padding: 0;
@@ -33,9 +33,11 @@ header h1 {
   margin: 0;
 }
 
-/* Navigation - Mobile with Hamburger */
+/* Navigation - Mobile with Hamburger - USING FLEXBOX */
 nav {
   position: relative;
+  display: flex;
+  align-items: center;
 }
 
 .menu-toggle {
@@ -94,7 +96,7 @@ nav {
   top: 0;
 }
 
-/* Mobile Navigation Menu */
+/* Mobile Navigation Menu - USING FLEXBOX */
 .nav-menu {
   display: none;
   flex-direction: column;
@@ -120,17 +122,29 @@ nav {
   padding: 0.75rem 1rem;
   display: block;
   border-radius: 4px;
-  transition: background-color 0.3s ease;
+  transition: all 0.3s ease;
   text-align: center;
 }
 
+/* HOVER EFFECTS FOR NAVIGATION */
 .nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+  transform: scale(1.05);
+}
+
+.nav-link.active {
   background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Hover effect for menu toggle */
+.menu-toggle:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
 }
 
 /* Main Content */
 main {
-  max-width: 800px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 1rem;
 }
@@ -146,27 +160,48 @@ main h2 {
 .gallery {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 1rem;
+  gap: 1.5rem;
 }
 
-.gallery figure {
+/* Temple Card Styles */
+.temple-card {
   background-color: white;
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.gallery img {
+.temple-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.temple-image {
   width: 100%;
   height: 200px;
   object-fit: cover;
   display: block;
 }
 
-.gallery figcaption {
-  padding: 0.75rem;
-  text-align: center;
-  font-weight: 500;
+.temple-info {
+  padding: 1rem;
+}
+
+.temple-name {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #2c3e50;
+  margin-bottom: 0.5rem;
+}
+
+.temple-detail {
+  margin-bottom: 0.25rem;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.temple-detail strong {
   color: #2c3e50;
 }
 
@@ -179,7 +214,7 @@ footer {
 }
 
 .footer-content {
-  max-width: 800px;
+  max-width: 1200px;
   margin: 0 auto;
   text-align: center;
 }

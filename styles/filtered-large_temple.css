@@ -22,7 +22,7 @@
   /* Navigation - Large Screen Flex */
   .nav-menu {
     display: flex ;
-    flex-direction: row;
+    justify-content: space-around;
    
     background: transparent;
     width: auto;

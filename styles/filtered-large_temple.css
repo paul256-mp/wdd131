@@ -22,6 +22,7 @@
   /* Navigation - Large Screen Flex */
   .nav-menu {
     display: flex ;
+
     justify-content: space-around;
    
     background: transparent;
@@ -47,6 +48,7 @@
     margin: 2rem 0;
     display: block;
   }
+    
 
   /* Gallery - Large Screen Grid */
   .gallery {

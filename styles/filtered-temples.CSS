@@ -35,7 +35,7 @@ header h1 {
 
 /* Navigation - Mobile with Hamburger - USING FLEXBOX */
 nav {
-  position: relative;
+ 
   display: flex;
   align-items: center;
 }
@@ -73,43 +73,20 @@ nav {
   transition: all 0.3s ease;
 }
 
-.hamburger::before {
-  top: -8px;
-}
 
-.hamburger::after {
-  top: 8px;
-}
 
-/* Hamburger animation when active */
-.menu-toggle.active .hamburger {
-  background: transparent;
-}
 
-.menu-toggle.active .hamburger::before {
-  transform: rotate(45deg);
-  top: 0;
-}
 
-.menu-toggle.active .hamburger::after {
-  transform: rotate(-45deg);
-  top: 0;
-}
 
 /* Mobile Navigation Menu - USING FLEXBOX */
-.nav-menu {
-  display: none;
-  flex-direction: column;
-  position: absolute;
-  top: 100%;
-  right: 0;
+.nav ul{
+  display: flex;
+  justify-content: space-around;
   background: #2c3e50;
-  list-style: none;
-  width: 200px;
-  padding: 1rem;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  border-radius: 0 0 8px 8px;
-  z-index: 1000;
+
+   
+
+  
 }
 
 .nav-menu.active {

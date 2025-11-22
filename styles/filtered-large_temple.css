@@ -2,21 +2,53 @@
 
 /* Header Styles for Large Screens */
 header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  display: block;
+  
   padding: 1rem 2rem;
-  text-align: left;
+
 }
 
 header h1 {
   margin-bottom: 0;
 }
 
-/* Navigation - Large Screen Flex */
+ .menu-toggle {
+  display: block;
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
 nav ul {
-  flex-direction: row;
-  gap: 1rem;
+  display: none;
+  list-style: none;
+  flex-direction: column;
+}
+
+nav ul.active {
+  display: flex;
+}
+
+nav a {
+  color: #ffffff;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  display: block;
+}
+
+nav a:hover {
+  background-color: #555555;
+/* Navigation - Large Screen Flex */
+}
+nav ul {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  background-color: aqua;
+
+ 
 }
 
 nav a {

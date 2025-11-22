@@ -4,6 +4,7 @@
   /* Header Styles for Large Screens */
   header {
     padding: 1rem 2rem;
+    flex-direction: column;
   }
 
   .header-container {
@@ -35,6 +36,17 @@
     padding: 0.5rem 1.5rem;
     position: relative;
   }
+    nav ul {
+      display: flex;
+      justify-content: space-around;
+      /* evenly spaces links */
+      align-items: center;
+      /* vertically aligns them */
+      list-style: none;
+      /* removes default bullets */
+      padding: 0;
+      margin: 0;
+    }
 
   /* Enhanced HOVER EFFECTS for large screens */
   .nav-link:hover {

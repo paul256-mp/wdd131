@@ -222,16 +222,36 @@ footer {
 .footer-content p {
   margin: 0.5rem 0;
 }
-@media (max-width: 600px) {
-  nav ul {
-    flex-direction: column;
-  }
-}
+
 nav ul {
   display: flex;
   justify-content: space-around;
 }
+@media (min-width: 768px) {
+  body {
+    padding: 0 2rem;
+  }
+
+  header {
+    padding: 1.5rem 2rem;
+  }
+
+  .header-container {
+    padding: 0;
+  }
+
+nav a {
+  color: #333;
+  text-decoration: none;
+  padding: 0.5rem;
+}
+
 nav a:hover {
   color: #0077cc;
+  /* changes text color */
   text-decoration: underline;
+  /* adds underline */
+  background-color: #f0f0f0;
+  /* optional highlight */
+}
 }

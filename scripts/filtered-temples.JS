@@ -1,4 +1,3 @@
-
 // Array of Temple Objects
 const temples = [
   {
@@ -63,14 +62,38 @@ const temples = [
     location: "Rome, Italy",
     dedicated: "2019, March, 10",
     area: 41010,
-    imageUrl: "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/rome-italy/400x225/rome-italy-temple-lds-1079992-wallpaper.jpg"
+    imageUrl: "https://media.ldscdn.org/images/media-library/rome-italy-temple/rome-italy-temple-2190090-wallpaper.jpg?download=true"
   },
   {
     templeName: "Kyiv Ukraine",
     location: "Kyiv, Ukraine",
     dedicated: "2010, August, 29",
     area: 22000,
-    imageUrl: "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/kyiv-ukraine/400x250/kyiv-ukraine-temple-lds-774427-wallpaper.jpg"
+    imageUrl: "https://th.bing.com/th/id/R.f7ac89c869035c2fe96f46bfac56812c?rik=ex5qqapFKlz8iw&riu=http%3a%2f%2fmedia.ldscdn.org%2fimages%2fmedia-library%2ftemples%2fkyiv-ukraine%2fkyiv-ukraine-temple-lds-807707-wallpaper.jpg&ehk=hyBToIroXHD1MzZSpR46VrfTHJO0I%2bpBczqdEZMEd7w%3d&risl=&pid=ImgRaw&r=0"
+  },
+  {
+    templeName: "Toronto onterio",
+    location: "Toronto, Ontario, Canada",
+    dedicated: "1990, August, 25",
+    area: 55558,
+    imageUrl:
+      "https://churchofjesuschristtemples.org/assets/img/temples/toronto-ontario-temple/toronto-ontario-temple-58565.jpg"
+  },
+  {
+    templeName: "Manaus Brazil",
+    location: "Manaus, Brazil",
+    dedicated: "2012, June, 10",
+    area: 32032,
+    imageUrl:
+      "https://churchofjesuschristtemples.org/assets/img/temples/manaus-brazil-temple/manaus-brazil-temple-3918.jpg"
+  },
+  {
+    templeName: "Bern Switzerland",
+    location: "Bern, Switzerland",
+    dedicated: "1955, September, 11",
+    area: 35546,
+    imageUrl:
+      "https://churchofjesuschristtemples.org/assets/img/temples/bern-switzerland-temple/bern-switzerland-temple-54640.jpg"
   }
 ];
 

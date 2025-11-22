@@ -1,0 +1,65 @@
+/* Large Screen Styles for Filtered Temples */
+@media (min-width: 1024px) {
+
+  /* Header Styles for Large Screens */
+  header {
+    padding: 1rem 2rem;
+  }
+
+  .header-container {
+    padding: 0 1rem;
+  }
+
+  header h1 {
+    font-size: 2rem;
+  }
+
+  /* Hide hamburger menu on large screens */
+  .menu-toggle {
+    display: none;
+  }
+
+  /* Navigation - Large Screen Flex */
+  .nav-menu {
+    display: flex ;
+    flex-direction: row;
+   
+    background: transparent;
+    width: auto;
+    padding: 0;
+    box-shadow: none;
+    gap: 1rem;
+  }
+
+  .nav-link {
+    padding: 0.5rem 1.5rem;
+    position: relative;
+  }
+  .nav-link:hover,
+  .nav-link.active {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+  }
+
+  /* Main Content for Large Screens */
+  main h2 {
+    font-size: 2.2rem;
+    margin: 2rem 0;
+    display: block;
+  }
+
+  /* Gallery - Large Screen Grid */
+  .gallery {
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+  }
+
+  .temple-image {
+    height: 250px;
+  }
+
+  .temple-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+}

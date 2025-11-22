@@ -2,57 +2,32 @@
 
 /* Header Styles for Large Screens */
 header {
-  display: block;
-  
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   padding: 1rem 2rem;
-
+  
 }
 
 header h1 {
   margin-bottom: 0;
 }
 
- .menu-toggle {
-  display: block;
-  background: none;
-  border: none;
-  color: #ffffff;
-  font-size: 1.5rem;
-  cursor: pointer;
-}
-
-nav ul {
-  display: none;
-  list-style: none;
-  flex-direction: column;
-}
-
-nav ul.active {
-  display: flex;
-}
-
-nav a {
-  color: #ffffff;
-  text-decoration: none;
-  padding: 0.5rem 1rem;
-  display: block;
-}
-
-nav a:hover {
-  background-color: #555555;
 /* Navigation - Large Screen Flex */
-}
-nav ul {
+nav ul  li{
+  flex-direction: row;
   display: flex;
   justify-content: space-around;
-  flex-direction: column;
-  background-color: aqua;
-
- 
+  padding: 1rem;
+  margin: 0;
+  width: 100%;
+  background-color: rgb(60, 33, 177);
+  gap: 1rem;
 }
 
 nav a {
   border-radius: 4px;
+  width: 100%;
 }
 
 nav a:hover {

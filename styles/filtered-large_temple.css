@@ -32,6 +32,7 @@
     display: flex;
     direction: horizontal;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
+    width: 100%;
   
   }

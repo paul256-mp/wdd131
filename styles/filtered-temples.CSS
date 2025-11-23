@@ -21,20 +21,18 @@ header h1 {
   margin-bottom: 1rem;
 }
 
-/* Navigation - Mobile */
-.menu-toggle {
-  display: block;
-  background: none;
-  border: none;
-  color: #ffffff;
-  font-size: 1.5rem;
-  cursor: pointer;
+/* Navigation - Full Width Horizontal */
+nav {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
 }
 
 nav ul {
   display: flex;
   list-style: none;
-  flex-direction: column;
+  width: 100%;
+  justify-content: space-between;
 }
 
 nav a {
@@ -42,6 +40,8 @@ nav a {
   text-decoration: none;
   padding: 0.5rem 1rem;
   display: block;
+  flex: 1;
+  text-align: center;
 }
 
 nav a:hover {
@@ -92,4 +92,23 @@ footer {
   text-align: center;
   padding: 1rem;
   margin-top: 2rem;
+}
+
+/* Large Screen Styles */
+@media (min-width: 768px) {
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    text-align: left;
+  }
+
+  header h1 {
+    margin-bottom: 0;
+  }
+
+  .gallery {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }

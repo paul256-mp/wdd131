@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Review Form</title>
+  <meta name="description" content="review users to know there feedback">
+  <meta name="author" content="Paul makumbi">
+  <link rel="stylesheet" href="styles/form.css">
+  <script src="scripts/form.js" defer></script>
+</head>
+
+<body>
+  <h1>Product review</h1>
+  <form method="get" action="review.html">
+    <div>
+      <label for="product-name">Product Name</label>
+      <select id="product-name" name="product-name" required>
+        <option value="" disabled selected>Select a Product ...</option>
+      </select>
+    </div>
+
+    <div>
+      <label>Overall Rating</label>
+      <div>
+        <input type="radio" id="rating-1" name="rating" value="1" required>
+        <label for="rating-1">☆</label>
+
+        <input type="radio" id="rating-2" name="rating" value="2">
+        <label for="rating-2">☆☆</label>
+
+        <input type="radio" id="rating-3" name="rating" value="3">
+        <label for="rating-3">☆☆☆</label>
+
+        <input type="radio" id="rating-4" name="rating" value="4">
+        <label for="rating-4">☆☆☆☆</label>
+
+        <input type="radio" id="rating-5" name="rating" value="5">
+        <label for="rating-5">☆☆☆☆☆</label>
+      </div>
+    </div>
+
+    <div>
+      <label for="installation-date">Date of Installation</label>
+      <input type="date" id="installation-date" name="installation-date" required>
+    </div>
+
+    <div>
+      <label>Useful Features</label>
+      <div>
+        <input type="checkbox" id="feature-1" name="useful-features" value="feature1">
+        <label for="feature-1">Feature 1</label>
+
+        <input type="checkbox" id="feature-2" name="useful-features" value="feature2">
+        <label for="feature-2">Feature 2</label>
+
+        <input type="checkbox" id="feature-3" name="useful-features" value="feature3">
+        <label for="feature-3">Feature 3</label>
+      </div>
+    </div>
+
+    <div>
+      <label for="written-review">Written Review</label>
+      <textarea id="written-review" name="written-review"></textarea>
+    </div>
+
+    <div>
+      <label for="user-name">User Name</label>
+      <input type="text" id="user-name" name="user-name">
+    </div>
+
+    <input type="submit" value="Submit Review">
+  </form>
+
+  <footer>
+    <p>&copy; 2023 Your Name. All rights reserved.</p>
+  </footer>

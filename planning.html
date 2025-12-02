@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Plan Your Uganda Trip - Itineraries, costs, permits, and essential travel information">
+  <title>Pearl of Africa Explorer | Trip Planning</title>
+  <link rel="stylesheet" href="styles/project.css">
+  <link rel="stylesheet" href="styles/project_responsive">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Open+Sans:wght@400;500;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+  <!-- Skip to main content for accessibility -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Header & Navigation -->
+  <header class="main-header">
+    <div class="container">
+      <div class="header-content">
+        <div class="logo">
+          <h1><a href="index.html">Pearl of Africa<span class="highlight">Explorer</span></a></h1>
+        </div>
+        <button class="nav-toggle" aria-label="Toggle navigation">
+          <span class="hamburger"></span>
+        </button>
+        <nav class="main-nav" id="mainNav">
+          <ul>
+            <li><a href="project.html"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="park.html"><i class="fas fa-tree"></i> National Parks</a></li>
+            <li><a href="planning.html" class="active"><i class="fas fa-map-marked-alt"></i> Trip Planning</a></li>
+            <li><a href="#itinerary-builder" class="cta-nav"><i class="fas fa-route"></i> Build Itinerary</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- Page Header -->
+  <section class="page-header">
+    <div class="container">
+      <h1>Plan Your Uganda Adventure</h1>
+      <p>Everything you need to plan an unforgettable trip to the Pearl of Africa</p>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <main id="main-content" class="container">
+    <!-- Trip Calculator -->
+    <section class="calculator-section">
+      <h2><i class="fas fa-calculator"></i> Trip Cost Calculator</h2>
+      <p>Estimate the cost of your Uganda adventure based on your preferences</p>
+
+      <div class="calculator-container">
+        <div class="calculator-inputs">
+          <div class="calc-group">
+            <label for="tripDuration">Trip Duration (days):</label>
+            <input type="range" id="tripDuration" min="3" max="21" value="7" step="1">
+            <span id="durationValue">7 days</span>
+          </div>
+
+          <div class="calc-group">
+            <label for="travelersCount">Number of Travelers:</label>
+            <div class="counter-controls">
+              <button id="decreaseTravelers" class="counter-btn">-</button>
+              <input type="number" id="travelersCount" min="1" max="20" value="2" readonly>
+              <button id="increaseTravelers" class="counter-btn">+</button>
+            </div>
+          </div>
+
+          <div class="calc-group">
+            <label for="accommodationLevel">Accommodation Level:</label>
+            <select id="accommodationLevel" class="calc-select">
+              <option value="budget">Budget ($50-100/night)</option>
+              <option value="midrange" selected>Mid-range ($100-250/night)</option>
+              <option value="luxury">Luxury ($250+/night)</option>
+            </select>
+          </div>
+
+          <div class="calc-group">
+            <label for="includeGorilla">Include Gorilla Trekking:</label>
+            <div class="toggle-group">
+              <input type="checkbox" id="includeGorilla" checked>
+              <span class="toggle-slider-small"></span>
+            </div>
+            <span class="calc-note">Permit: $700 per person</span>
+          </div>
+
+          <div class="calc-group">
+            <label for="transportType">Transportation:</label>
+            <select id="transportType" class="calc-select">
+              <option value="selfdrive">Self-drive rental car</option>
+              <option value="private" selected>Private driver/vehicle</option>
+              <option value="flyin">Fly-in safari</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="calculator-results">
+          <h3>Estimated Trip Cost</h3>
+          <div class="cost-breakdown">
+            <div class="cost-item">
+              <span>Accommodation:</span>
+              <span id="accommodationCost">$0</span>
+            </div>
+            <div class="cost-item">
+              <span>Transportation:</span>
+              <span id="transportationCost">$0</span>
+            </div>
+            <div class="cost-item">
+              <span>Park Fees & Permits:</span>
+              <span id="parkFeesCost">$0</span>
+            </div>
+            <div class="cost-item">
+              <span>Food & Miscellaneous:</span>
+              <span id="foodCost">$0</span>
+            </div>
+            <div class="cost-item total-cost">
+              <strong>Total Estimated Cost:</strong>
+              <strong id="totalCost">$0</strong>
+            </div>
+            <div class="cost-per-person">
+              <span>Cost per person:</span>
+              <span id="costPerPerson">$0</span>
+            </div>
+          </div>
+
+          <button id="saveEstimate" class="btn btn-primary">
+            <i class="fas fa-save"></i> Save This Estimate
+          </button>
+          <button id="resetCalculator" class="btn btn-secondary">
+            <i class="fas fa-redo"></i> Reset Calculator
+          </button>
+        </div>
+      </div>
+
+      <div class="saved-estimates" id="savedEstimates">
+        <h4>Saved Estimates</h4>
+        <div id="estimatesList"></div>
+      </div>
+    </section>
+
+    <!-- Itinerary Builder -->
+    <section id="itinerary-builder" class="itinerary-section">
+      <h2><i class="fas fa-route"></i> Itinerary Builder</h2>
+      <p>Build your custom Uganda itinerary by adding activities and parks</p>
+
+      <div class="itinerary-builder">
+        <div class="itinerary-controls">
+          <div class="control-group">
+            <label for="addActivity">Add Activity:</label>
+            <select id="addActivity" class="activity-select">
+              <option value="">Select an activity...</option>
+              <option value="gorilla">Gorilla Trekking (Bwindi)</option>
+              <option value="chimpanzee">Chimpanzee Tracking (Kibale)</option>
+              <option value="safari">Game Drive (Queen Elizabeth)</option>
+              <option value="boat">Boat Cruise (Murchison/Kazinga)</option>
+              <option value="hike">Mountain Hike (Rwenzori)</option>
+              <option value="culture">Cultural Experience</option>
+            </select>
+            <button id="addToItinerary" class="btn btn-primary">
+              <i class="fas fa-plus"></i> Add
+            </button>
+          </div>
+
+          <div class="control-group">
+            <label for="itineraryDuration">Set Duration:</label>
+            <select id="itineraryDuration" class="duration-select">
+              <option value="5">5 Days</option>
+              <option value="7" selected>7 Days</option>
+              <option value="10">10 Days</option>
+              <option value="14">14 Days</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="itinerary-display">
+          <div class="itinerary-header">
+            <h3>Your Uganda Itinerary</h3>
+            <div class="itinerary-stats">
+              <span id="activityCount">0</span> activities • <span id="estimatedDays">0</span> days
+            </div>
+          </div>
+
+          <div id="itineraryItems" class="itinerary-items">
+            <!-- Itinerary items will be added here -->
+            <div class="empty-itinerary">
+              <i class="fas fa-map"></i>
+              <p>Your itinerary is empty. Add activities to get started!</p>
+            </div>
+          </div>
+
+          <div class="itinerary-actions">
+            <button id="clearItinerary" class="btn btn-secondary">
+              <i class="fas fa-trash"></i> Clear Itinerary
+            </button>
+            <button id="saveItinerary" class="btn btn-primary">
+              <i class="fas fa-download"></i> Save Itinerary
+            </button>
+            <button id="printItinerary" class="btn btn-primary">
+              <i class="fas fa-print"></i> Print Itinerary
+            </button>
+          </div>
+        </div>
+
+        <div class="itinerary-tips">
+          <h4><i class="fas fa-lightbulb"></i> Itinerary Tips</h4>
+          <ul>
+            <li>Allow for travel time between parks (4-8 hours driving)</li>
+            <li>Gorilla permits must be booked 6-12 months in advance</li>
+            <li>Include rest days after strenuous activities</li>
+            <li>Consider altitude acclimatization for mountain hikes</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Essential Information -->
+    <section class="essentials-section">
+      <h2><i class="fas fa-info-circle"></i> Essential Information</h2>
+
+      <div class="essentials-tabs">
+        <div class="tab-buttons">
+          <button class="tab-btn active" data-tab="visa">Visa & Entry</button>
+          <button class="tab-btn" data-tab="health">Health & Vaccinations</button>
+          <button class="tab-btn" data-tab="packing">What to Pack</button>
+          <button class="tab-btn" data-tab="safety">Safety Tips</button>
+        </div>
+
+        <div class="tab-content">
+          <div id="visa-tab" class="tab-pane active">
+            <h3>Visa & Entry Requirements</h3>
+            <ul>
+              <li><strong>eVisa:</strong> Apply online at <a href="https://visas.immigration.go.ug"
+                  target="_blank">visas.immigration.go.ug</a></li>
+              <li><strong>Cost:</strong> Single entry visa - $50, East African Tourist Visa - $100</li>
+              <li><strong>Validity:</strong> Tourist visas are typically valid for 90 days</li>
+              <li><strong>Passport:</strong> Must be valid for at least 6 months from date of entry</li>
+              <li><strong>Yellow Fever:</strong> Vaccination certificate required for entry</li>
+            </ul>
+          </div>
+
+          <div id="health-tab" class="tab-pane">
+            <h3>Health & Vaccinations</h3>
+            <ul>
+              <li><strong>Required:</strong> Yellow Fever vaccination</li>
+              <li><strong>Recommended:</strong> Hepatitis A & B, Typhoid, Cholera</li>
+              <li><strong>Malaria:</strong> Prophylaxis recommended for all travelers</li>
+              <li><strong>COVID-19:</strong> Check current requirements before travel</li>
+              <li><strong>Altitude Sickness:</strong> Possible in mountainous regions</li>
+            </ul>
+          </div>
+
+          <div id="packing-tab" class="tab-pane">
+            <h3>What to Pack for Uganda</h3>
+            <div class="packing-list">
+              <div class="packing-category">
+                <h4>Clothing</h4>
+                <ul>
+                  <li>Lightweight, breathable clothing</li>
+                  <li>Long sleeves and pants for evenings</li>
+                  <li>Waterproof jacket</li>
+                  <li>Sturdy hiking boots</li>
+                  <li>Hat and sunglasses</li>
+                </ul>
+              </div>
+              <div class="packing-category">
+                <h4>Essentials</h4>
+                <ul>
+                  <li>Insect repellent with DEET</li>
+                  <li>Sunscreen (SPF 30+)</li>
+                  <li>Reusable water bottle</li>
+                  <li>Power adapter (UK Type G)</li>
+                  <li>Binoculars for wildlife viewing</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div id="safety-tab" class="tab-pane">
+            <h3>Safety Tips</h3>
+            <ul>
+              <li>Always follow park ranger instructions</li>
+              <li>Maintain safe distance from wildlife (especially primates)</li>
+              <li>Drink only bottled or purified water</li>
+              <li>Use registered tour operators and guides</li>
+              <li>Keep valuables secure and avoid displaying wealth</li>
+              <li>Purchase comprehensive travel insurance</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Budget Planning -->
+    <section class="budget-section">
+      <h2><i class="fas fa-wallet"></i> Budget Planning Guide</h2>
+
+      <div class="budget-cards">
+        <div class="budget-card budget">
+          <div class="budget-header">
+            <h3>Budget Traveler</h3>
+            <div class="budget-range">$80-120/day</div>
+          </div>
+          <ul>
+            <li>Camping or basic accommodation</li>
+            <li>Public transportation</li>
+            <li>Self-catering or local eateries</li>
+            <li>Fewer paid activities</li>
+            <li>No gorilla trekking (permit cost)</li>
+          </ul>
+        </div>
+
+        <div class="budget-card midrange">
+          <div class="budget-header">
+            <h3>Mid-range Traveler</h3>
+            <div class="budget-range">$150-300/day</div>
+          </div>
+          <ul>
+            <li>Comfortable lodges or hotels</li>
+            <li>Private vehicle with driver</li>
+            <li>Meals included at accommodation</li>
+            <li>Multiple park visits</li>
+            <li>Possible gorilla trekking</li>
+          </ul>
+        </div>
+
+        <div class="budget-card luxury">
+          <div class="budget-header">
+            <h3>Luxury Traveler</h3>
+            <div class="budget-range">$400+/day</div>
+          </div>
+          <ul>
+            <li>High-end lodges and camps</li>
+            <li>Fly-in safaris available</li>
+            <li>All meals and drinks included</li>
+            <li>Private guides and exclusive experiences</li>
+            <li>Gorilla trekking and all activities</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="budget-tips">
+        <h4>Money-Saving Tips</h4>
+        <ul>
+          <li><strong>Travel in groups:</strong> Share vehicle and guide costs</li>
+          <li><strong>Visit in wet season:</strong> Lower accommodation rates</li>
+          <li><strong>Book early:</strong> Better rates for gorilla permits and flights</li>
+          <li><strong>Use local guides:</strong> Often more affordable than international companies</li>
+          <li><strong>Combine parks:</strong> Reduces transportation costs between destinations</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Local Transportation -->
+    <section class="transport-section">
+      <h2><i class="fas fa-car"></i> Getting Around Uganda</h2>
+
+      <div class="transport-options">
+        <div class="transport-card">
+          <div class="transport-icon">
+            <i class="fas fa-car"></i>
+          </div>
+          <h3>Self-drive</h3>
+          <p><strong>Cost:</strong> $50-100/day</p>
+          <ul>
+            <li>Maximum flexibility</li>
+            <li>4x4 vehicle required for parks</li>
+            <li>International driving permit needed</li>
+            <li>Driving is on the left side</li>
+          </ul>
+        </div>
+
+        <div class="transport-card">
+          <div class="transport-icon">
+            <i class="fas fa-user-tie"></i>
+          </div>
+          <h3>Private Driver</h3>
+          <p><strong>Cost:</strong> $100-200/day</p>
+          <ul>
+            <li>Includes vehicle and driver</li>
+            <li>Local knowledge and navigation</li>
+            <li>Reduces stress of driving</li>
+            <li>Can arrange park entry</li>
+          </ul>
+        </div>
+
+        <div class="transport-card">
+          <div class="transport-icon">
+            <i class="fas fa-plane"></i>
+          </div>
+          <h3>Domestic Flights</h3>
+          <p><strong>Cost:</strong> $150-400 per sector</p>
+          <ul>
+            <li>Saves time on long distances</li>
+            <li>Aerial views of landscapes</li>
+            <li>Limited to major parks</li>
+            <li>Luggage restrictions apply</li>
+          </ul>
+        </div>
+
+        <div class="transport-card">
+          <div class="transport-icon">
+            <i class="fas fa-bus"></i>
+          </div>
+          <h3>Public Transport</h3>
+          <p><strong>Cost:</strong> $5-20 per journey</p>
+          <ul>
+            <li>Very affordable</li>
+            <li>Connect with local people</li>
+            <li>Unreliable schedules</li>
+            <li>Not suitable for park access</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="main-footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>Pearl of Africa Explorer</h3>
+          <p>Your guide to Uganda's breathtaking landscapes and wildlife.</p>
+          <div class="social-links">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-section">
+          <h4>Travel Resources</h4>
+          <ul>
+            <li><a href="https://www.visituganda.com" target="_blank">Uganda Tourism Board</a></li>
+            <li><a href="https://travel.state.gov" target="_blank">US Travel Advisories</a></li>
+            <li><a href="https://www.cdc.gov/travel" target="_blank">CDC Travel Health</a></li>
+            <li><a href="references.html">References & Sources</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h4>Emergency Contacts</h4>
+          <p><i class="fas fa-phone-alt"></i> Tourist Police: 0800 199 199</p>
+          <p><i class="fas fa-ambulance"></i> Medical Emergency: 112</p>
+          <p><i class="fas fa-passport"></i> US Embassy: +256 414 306 001</p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; <span id="currentYear"></span> Pearl of Africa Explorer. All rights reserved.</p>
+        <p>Travel information is subject to change. Verify with official sources before travel.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="js/main.js" defer></script>
+  <script src="js/planning.js" defer></script>
+</body>
+
+</html>

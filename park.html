@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Explore Uganda's National Parks - Home to mountain gorillas, diverse wildlife, and breathtaking landscapes">
+  <title>Pearl of Africa Explorer | National Parks</title>
+  <link rel="stylesheet" href="styles/project.css">
+  <link rel="stylesheet" href="styles/project_responsive">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Open+Sans:wght@400;500;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+  <!-- Skip to main content for accessibility -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Header & Navigation -->
+  <header class="main-header">
+    <div class="container">
+      <div class="header-content">
+        <div class="logo">
+          <h1><a href="index.html">Pearl of Africa<span class="highlight">Explorer</span></a></h1>
+        </div>
+        <button class="nav-toggle" aria-label="Toggle navigation">
+          <span class="hamburger"></span>
+        </button>
+        <nav class="main-nav" id="mainNav">
+          <ul>
+            <li><a href="project.html"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="park.html" class="active"><i class="fas fa-tree"></i> National Parks</a></li>
+            <li><a href="planning.html"><i class="fas fa-map-marked-alt"></i> Trip Planning</a></li>
+            <li><a href="#park-finder" class="cta-nav"><i class="fas fa-search"></i> Find Park</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- Page Header -->
+  <section class="page-header">
+    <div class="container">
+      <h1>Uganda's National Parks</h1>
+      <p>Discover the protected areas that make Uganda one of Africa's premier wildlife destinations</p>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <main id="main-content" class="container">
+    <!-- Park Finder Tool -->
+    <section id="park-finder" class="finder-section">
+      <h2><i class="fas fa-search"></i> Find Your Perfect Park</h2>
+      <div class="finder-controls">
+        <div class="filter-group">
+          <label for="regionFilter"><i class="fas fa-map"></i> Filter by Region:</label>
+          <select id="regionFilter" class="filter-select">
+            <option value="all">All Regions</option>
+            <option value="southwest">Southwest Uganda</option>
+            <option value="western">Western Uganda</option>
+            <option value="northwest">Northwest Uganda</option>
+            <option value="eastern">Eastern Uganda</option>
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <label for="activityFilter"><i class="fas fa-hiking"></i> Filter by Activity:</label>
+          <select id="activityFilter" class="filter-select">
+            <option value="all">All Activities</option>
+            <option value="gorilla">Gorilla Trekking</option>
+            <option value="safari">Wildlife Safari</option>
+            <option value="hiking">Mountain Hiking</option>
+            <option value="birding">Bird Watching</option>
+            <option value="water">Water Activities</option>
+          </select>
+        </div>
+
+        <button id="clearFilters" class="btn btn-secondary">
+          <i class="fas fa-times"></i> Clear Filters
+        </button>
+      </div>
+
+      <div class="results-count">
+        Showing <span id="parksCount">0</span> of <span id="totalParks">0</span> parks
+      </div>
+    </section>
+
+    <!-- Parks Grid -->
+    <section class="parks-grid-section">
+      <div id="parksGrid" class="parks-grid">
+        <!-- Parks will be loaded dynamically -->
+      </div>
+
+      <!-- Loading Indicator -->
+      <div id="loadingIndicator" class="loading-indicator">
+        <i class="fas fa-spinner fa-spin"></i> Loading parks...
+      </div>
+
+      <!-- No Results Message -->
+      <div id="noResults" class="no-results" style="display: none;">
+        <i class="fas fa-search"></i>
+        <h3>No parks match your filters</h3>
+        <p>Try adjusting your search criteria or clear filters to see all parks</p>
+      </div>
+    </section>
+
+    <!-- Park Comparison -->
+    <section class="comparison-section">
+      <h2><i class="fas fa-balance-scale"></i> Park Comparison</h2>
+      <p>Select up to 3 parks to compare their features</p>
+
+      <div class="comparison-controls">
+        <div class="comparison-selectors">
+          <select id="comparePark1" class="compare-select">
+            <option value="">Select first park</option>
+          </select>
+          <select id="comparePark2" class="compare-select">
+            <option value="">Select second park</option>
+          </select>
+          <select id="comparePark3" class="compare-select">
+            <option value="">Select third park</option>
+          </select>
+        </div>
+        <button id="compareButton" class="btn btn-primary">
+          <i class="fas fa-chart-bar"></i> Compare Parks
+        </button>
+        <button id="clearComparison" class="btn btn-secondary">
+          <i class="fas fa-times"></i> Clear
+        </button>
+      </div>
+
+      <div id="comparisonResults" class="comparison-results" style="display: none;">
+        <!-- Comparison table will be inserted here -->
+      </div>
+    </section>
+
+    <!-- Seasonal Information -->
+    <section class="seasonal-section">
+      <h2><i class="fas fa-calendar-alt"></i> Best Time to Visit</h2>
+      <div class="seasonal-grid">
+        <div class="season-card">
+          <div class="season-icon dry-season">
+            <i class="fas fa-sun"></i>
+          </div>
+          <h3>Dry Season</h3>
+          <p class="season-period">June - September & December - February</p>
+          <ul>
+            <li>Best for wildlife viewing</li>
+            <li>Easy road access to parks</li>
+            <li>Gorilla trekking at its best</li>
+            <li>Peak tourist season</li>
+          </ul>
+        </div>
+
+        <div class="season-card">
+          <div class="season-icon wet-season">
+            <i class="fas fa-cloud-rain"></i>
+          </div>
+          <h3>Wet Season</h3>
+          <p class="season-period">March - May & October - November</p>
+          <ul>
+            <li>Lush green landscapes</li>
+            <li>Bird watching is excellent</li>
+            <li>Fewer tourists</li>
+            <li>Lower accommodation rates</li>
+          </ul>
+        </div>
+
+        <div class="season-card">
+          <div class="season-icon shoulder-season">
+            <i class="fas fa-cloud-sun"></i>
+          </div>
+          <h3>Shoulder Seasons</h3>
+          <p class="season-period">May-June & October-November</p>
+          <ul>
+            <li>Balance of good weather and fewer crowds</li>
+            <li>Good value for money</li>
+            <li>Migratory birds present</li>
+            <li>Variable weather conditions</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Conservation Section -->
+    <section class="conservation-section">
+      <h2><i class="fas fa-hands-helping"></i> Conservation Efforts</h2>
+      <div class="conservation-content">
+        <div class="conservation-text">
+          <h3>Protecting Uganda's Natural Heritage</h3>
+          <p>Uganda's national parks play a crucial role in conservation:</p>
+          <ul>
+            <li><strong>Mountain Gorilla Conservation:</strong> Bwindi and Mgahinga parks protect over half of the
+              world's remaining mountain gorillas</li>
+            <li><strong>Community Involvement:</strong> 20% of park entrance fees support local community projects</li>
+            <li><strong>Anti-Poaching Units:</strong> Dedicated ranger teams protect wildlife from illegal activities
+            </li>
+            <li><strong>Habitat Restoration:</strong> Reforestation programs in degraded areas of the parks</li>
+          </ul>
+          <button id="donateBtn" class="btn btn-primary">
+            <i class="fas fa-donate"></i> Support Conservation
+          </button>
+        </div>
+        <div class="conservation-image">
+          <img src="images/conservation.webp" alt="Ranger with mountain gorilla" loading="lazy"
+            onerror="this.src='images/conservation-placeholder.webp'">
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="main-footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>Pearl of Africa Explorer</h3>
+          <p>Your guide to Uganda's breathtaking landscapes and wildlife.</p>
+          <div class="social-links">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-section">
+          <h4>Park Resources</h4>
+          <ul>
+            <li><a href="https://ugandawildlife.org" target="_blank">Uganda Wildlife Authority</a></li>
+            <li><a href="#" onclick="showPermitInfo()">Permit Information</a></li>
+            <li><a href="#" onclick="showParkRules()">Park Rules & Regulations</a></li>
+            <li><a href="references.html">References & Sources</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h4>Contact Park Authorities</h4>
+          <p><i class="fas fa-envelope"></i> parks@ugandawildlife.org</p>
+          <p><i class="fas fa-phone"></i> +256 414 355 000</p>
+          <p><i class="fas fa-map-marker-alt"></i> Plot 7 Kira Road, Kampala</p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; <span id="currentYear"></span> Pearl of Africa Explorer. All rights reserved.</p>
+        <p>Park data sourced from Uganda Wildlife Authority and conservation partners</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="js/main.js" defer></script>
+  <script src="js/parks.js" defer></script>
+</body>
+
+</html>
